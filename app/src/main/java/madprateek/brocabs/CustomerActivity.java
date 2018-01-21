@@ -104,7 +104,7 @@ public class CustomerActivity extends AppCompatActivity {
 
     }
 
-    private void registerUser(String email, String password) {
+    private void registerUser(final String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -114,12 +114,12 @@ public class CustomerActivity extends AppCompatActivity {
                             FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
                             String uid = current_user.getUid();
 
-                            databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+                            String email = mEmail.getEditText().getText().toString();
+
+                            databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child("Customer").child(uid);
 
                             HashMap<String,String> userMap = new HashMap<>();
-                            userMap.put("status","Hi there I am using GoChat");
-                            userMap.put("image","default");
-                            userMap.put("thumb_image","default");
+                            userMap.put("Email",email);
                             databaseReference.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

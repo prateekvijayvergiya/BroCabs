@@ -27,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.customerBtn:
-                Intent driverIntent = new Intent(MainActivity.this,CustomerActivity.class);
-                startActivity(driverIntent);
+                if (checked){
+
+                    Intent customerIntent = new Intent(MainActivity.this,CustomerActivity.class);
+                    startActivity(customerIntent);
+                }
+                break;
 
         }
     }

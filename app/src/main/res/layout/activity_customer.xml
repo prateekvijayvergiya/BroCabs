@@ -67,6 +67,8 @@
         android:layout_marginStart="163dp"
         android:layout_marginTop="24dp"
         android:text="Don't Have Account!"
+        android:clickable="true"
+        android:contextClickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
