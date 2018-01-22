@@ -90,7 +90,7 @@ public class DriverActivity extends AppCompatActivity {
 
                 if (task.isSuccessful()){
                     mLoginProgress.dismiss();
-                    Intent mainIntent = new Intent(DriverActivity.this,MapActivity.class);
+                    Intent mainIntent = new Intent(DriverActivity.this,DriverMapActivity.class);
                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(mainIntent);
                     finish();
@@ -125,7 +125,7 @@ public class DriverActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     Toast.makeText(DriverActivity.this, "Authentication Done.", Toast.LENGTH_SHORT).show();
                                     mRegProgress.dismiss();
-                                    Intent mainIntent = new Intent(DriverActivity.this,MapActivity.class);
+                                    Intent mainIntent = new Intent(DriverActivity.this,DriverMapActivity.class);
                                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(mainIntent);
                                     finish();
